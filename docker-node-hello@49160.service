@@ -1,0 +1,10 @@
+[Unit]
+Description=%p
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run -p %i:8080 %p
+
+[Install]
+WantedBy=local.target
